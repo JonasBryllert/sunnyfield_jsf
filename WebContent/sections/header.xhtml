@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+	<title>IGNORED</title>
+</head>
+
+<body>
+	<ui:composition>
+		<h:panelGrid columns="3" columnClasses="col1,col2,col3" styleClass="headerClass">
+			<h:graphicImage library="images" name="titleleft.jpg"></h:graphicImage>
+			<h:outputText value="Sunny Field" styleClass="headertext"></h:outputText>
+			<h:graphicImage library="images" name="titleright.jpg"></h:graphicImage>
+		</h:panelGrid>
+			<ui:remove>
+		<div id="titlepane">
+			<img style="float: left" src="resources/images/titleleft.jpg" width="150" height="100" alt="title photo"/>
+			
+			<h:panelGrid >
+				<h:outputText value="Sunny Field" styleClass="headertext"></h:outputText>
+			</h:panelGrid>
+			<div id="titletextpane">Sunny Field</div>
+			<img src="resources/images/titleright.jpg" width="150" height="100" alt="title photo"/>
+		</div>
+			</ui:remove>
+	</ui:composition>
+</body>
+</html>

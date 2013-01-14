@@ -1,0 +1,40 @@
+
+#totalpane {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;	
+	height: 800px;
+	background-color: #A0A0A0;
+}
+
+#rightpane {
+	float: right; 
+	width: 510px;
+/*	height: auto;*/
+	height: 420px;
+}
+
+#photopane {
+	width: 500px;
+	height: 380px;
+	border: 5px solid black;
+}
+
+#photocaptionpane {
+	text-align: center;
+	font-size: 0.8em;
+}
+
+#textPane {
+	overflow: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.photolink {
+/*	cursor: pointer;*/
+	color: blue;
+}
+
+/*#prevLink {
+	color: fuchsia;	
+}*/

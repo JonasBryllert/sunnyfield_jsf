@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+	<application>
+		<locale-config>
+			<default-locale>en</default-locale>
+			<supported-locale>sv</supported-locale>
+		</locale-config>
+		<resource-bundle>
+			<base-name>template_msg</base-name>
+			<var>template_msg</var>
+		</resource-bundle>
+		<resource-bundle>
+			<base-name>index_msg</base-name>
+			<var>index_msg</var>
+		</resource-bundle>
+		<resource-bundle>
+			<base-name>house_msg</base-name>
+			<var>house_msg</var>
+		</resource-bundle>
+		<resource-bundle>
+			<base-name>garden_msg</base-name>
+			<var>garden_msg</var>
+		</resource-bundle>
+	</application>
+
+</faces-config>

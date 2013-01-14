@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+	<title>IGNORED</title>
+</head>
+
+<body>
+	<ui:composition template="/templates/template.xhtml">
+		<ui:define name="title">
+			#{index_msg.title}
+		</ui:define>
+		
+		<ui:define name="body">
+			<h:outputStylesheet library="css" name="index.css"/>
+			<div id="centerpane">
+				<p style="font-size: 14pt; font-weight: bold; text-align: center">#{index_msg.body_title}</p>
+				<hr/>
+				#{index_msg.info_1}
+				<p>#{index_msg.info_2}</p>
+				<p>#{index_msg.info_3}</p>
+				<p>#{index_msg.info_4}</p>
+				<p>#{index_msg.info_5}</p>
+				
+			</div>
+			
+			<div id="rightpane">
+				<p style="font-size: 12pt; font-style: italic">Did you know that:</p>
+				<ul>
+					<li>#{index_msg.know_1_header}
+						<div class="fakelink" 
+								id="showfoundation"
+								onclick="this.style.display='none';
+													document.getElementById('foundationtext').style.display='block';
+													document.getElementById('hidefoundation').style.display='block';">
+							#{index_msg.know_more_show}
+						</div>
+						<div id="foundationtext" class="inlinetext">
+							<p>#{index_msg.know_1_details}</p>
+						</div>
+						<div class="fakelink" 
+								id="hidefoundation"
+								onclick="this.style.display='none';
+													document.getElementById('foundationtext').style.display='none';
+													document.getElementById('showfoundation').style.display='block';">
+							#{index_msg.know_more_hide}
+						</div>						 
+					</li>
+					<li>#{index_msg.know_2_header}
+						<div class="fakelink" 
+								id="showaddress"
+								onclick="this.style.display='none';
+													document.getElementById('addresstext').style.display='block';
+													document.getElementById('hideaddress').style.display='block';">
+							#{index_msg.know_more_show}
+						</div>
+						<div id="addresstext" class="inlinetext">
+							#{index_msg.know_2_details}
+						</div>
+						<div class="fakelink" 
+								id="hideaddress"
+								onclick="this.style.display='none';
+													document.getElementById('addresstext').style.display='none';
+													document.getElementById('showaddress').style.display='block';">
+							#{index_msg.know_more_hide}
+						</div>	
+					</li>					 
+					<li>#{index_msg.know_3_header}
+						<div class="fakelink" 
+								id="showdriveway"
+								onclick="this.style.display='none';
+													document.getElementById('drivewaytext').style.display='block';
+													document.getElementById('hidedriveway').style.display='block';">
+							#{index_msg.know_more_show}
+						</div>
+						<div id="drivewaytext" class="inlinetext">
+							#{index_msg.know_3_details} 
+						</div>
+						<div class="fakelink" 
+								id="hidedriveway"
+								onclick="this.style.display='none';
+													document.getElementById('drivewaytext').style.display='none';
+													document.getElementById('showdriveway').style.display='block';">
+							#{index_msg.know_more_hide}
+						</div>	
+					
+					</li>
+					<li>#{index_msg.know_4_header}
+						<div class="fakelink" 
+								id="showtrees"
+								onclick="this.style.display='none';
+													document.getElementById('treetext').style.display='block';
+													document.getElementById('hidetrees').style.display='block';">
+							#{index_msg.know_more_show}
+						</div>
+						<div id="treetext" class="inlinetext">
+							#{index_msg.know_4_details}
+						</div>
+						<div class="fakelink" 
+								id="hidetrees"
+								onclick="this.style.display='none';
+													document.getElementById('treetext').style.display='none';
+													document.getElementById('showtrees').style.display='block';">
+							#{index_msg.know_more_hide}
+						</div>				
+					</li>
+				</ul>
+			</div>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

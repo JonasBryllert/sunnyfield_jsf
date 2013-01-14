@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+	<title>IGNORED</title>
+</head>
+
+<body>
+	<ui:composition>
+		<h:outputStylesheet library="css" name="navigationmenu.css"/>
+
+		<h:form>
+			<div id="navigationdiv">
+
+			<h:commandButton id="englishbutton" styleClass="languagebutton" image="/resources/images/irish-flag.gif" action="#{userPreferences.setLanguage('english')}">
+				<f:param name="language" value="english" />
+			</h:commandButton>
+			<h:commandButton id="swedishbutton" styleClass="languagebutton" image="/resources/images/swedish-flag.gif" action="#{userPreferences.setLanguage('swedish')}">
+				<f:param name="language" value="swedish" />
+			</h:commandButton>
+		
+			<div id="navigationmenu">
+			<ul>
+				<li>
+					<h:commandLink id="homemenu" class="topmenu" action="index?faces-redirect=true">
+						#{template_msg.home}<span>Go back to home page</span>
+					</h:commandLink>
+				</li>
+				<!-- li>#{template_msg.home}</li-->
+				<li class="liclass">
+					<h:commandLink id="housemenu" styleClass="topmenu" action="house?faces-redirect=true">
+						#{template_msg.house}<span>#{template_msg.house_tooltip}</span>
+					</h:commandLink>
+				</li>
+				<li class="liclass">
+					<h:commandLink id="gardenmenu" styleClass="topmenu" action="garden?faces-redirect=true">
+						#{template_msg.garden}<span>#{template_msg.garden_tooltip}</span>
+					</h:commandLink>
+				</li>
+				<li class="liclass">
+					<a id="hensmenu" class="topmenu">
+						#{template_msg.hens}<span>#{template_msg.hens_tooltip}</span>
+					</a>
+				</li>					
+				<li class="liclass">
+					<a id="goatmenu" class="topmenu">
+						#{template_msg.lawn}<span>#{template_msg.lawn_tooltip}</span>
+					</a>
+				</li>
+				<!-- li>
+					<a id="mapmenu" class="topmenu">
+						Map<span>See a google map of the area</span>
+					</a>
+				</li-->
+				<li class="liclass">
+					<a id="blogmenu" class="topmenu">
+						#{template_msg.blog}<span>#{template_msg.blog_tooltip}</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+		</div>
+		</h:form>
+		
+			
+	</ui:composition>
+</body>
+</html>
