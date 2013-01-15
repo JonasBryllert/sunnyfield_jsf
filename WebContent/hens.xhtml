@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+	<title>IGNORED</title>
+</head>
+
+<body>
+	<ui:composition template="/templates/template.xhtml">
+		<ui:define name="title">
+			#{hens_msg.title}
+		</ui:define>
+
+		<ui:define name="body">
+			<h:outputStylesheet library="css" name="hens.css"/>
+			<h2 style="text-align: center">#{hens_msg.header_message}</h2>
+			<p>#{hens_msg.info_1}</p>
+			<p>#{hens_msg.info_2}</p>
+			<p>#{hens_msg.info_3}</p>
+			<p>#{hens_msg.info_4}</p>
+			<h:panelGrid columns="2" styleClass="imageTable" cellpadding="0">
+				<h:graphicImage name="images/hens/hens1.jpg" alt="Chickens"/>
+				<h:graphicImage name="images/hens/hens2.jpg" alt="Chickens"/>
+			
+			</h:panelGrid>
+		</ui:define>
+		
+	</ui:composition>
+</body>	
+</html>

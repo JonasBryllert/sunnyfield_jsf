@@ -16,10 +16,10 @@
 		<h:form>
 			<div id="navigationdiv">
 
-			<h:commandButton id="englishbutton" styleClass="languagebutton" image="/resources/images/irish-flag.gif" action="#{userPreferences.setLanguage('english')}">
+			<h:commandButton id="englishbutton" styleClass="languagebutton" image="/resources/images/irish-flag.gif" action="#{userPreferences.changeLanguage('english')}">
 				<f:param name="language" value="english" />
 			</h:commandButton>
-			<h:commandButton id="swedishbutton" styleClass="languagebutton" image="/resources/images/swedish-flag.gif" action="#{userPreferences.setLanguage('swedish')}">
+			<h:commandButton id="swedishbutton" styleClass="languagebutton" image="/resources/images/swedish-flag.gif" action="#{userPreferences.changeLanguage('swedish')}">
 				<f:param name="language" value="swedish" />
 			</h:commandButton>
 		
@@ -42,14 +42,14 @@
 					</h:commandLink>
 				</li>
 				<li class="liclass">
-					<a id="hensmenu" class="topmenu">
+					<h:commandLink id="hensmenu" styleClass="topmenu" action="hens?faces-redirect=true">
 						#{template_msg.hens}<span>#{template_msg.hens_tooltip}</span>
-					</a>
+					</h:commandLink>
 				</li>					
 				<li class="liclass">
-					<a id="goatmenu" class="topmenu">
+					<h:commandLink id="lawnmenu" styleClass="topmenu" action="lawn?faces-redirect=true">
 						#{template_msg.lawn}<span>#{template_msg.lawn_tooltip}</span>
-					</a>
+					</h:commandLink>
 				</li>
 				<!-- li>
 					<a id="mapmenu" class="topmenu">
@@ -57,9 +57,9 @@
 					</a>
 				</li-->
 				<li class="liclass">
-					<a id="blogmenu" class="topmenu">
+					<h:commandLink id="blogmenu" styleClass="topmenu" action="blog?faces-redirect=true">
 						#{template_msg.blog}<span>#{template_msg.blog_tooltip}</span>
-					</a>
+					</h:commandLink>
 				</li>
 			</ul>
 		</div>

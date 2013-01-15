@@ -26,6 +26,10 @@
 			<base-name>garden_msg</base-name>
 			<var>garden_msg</var>
 		</resource-bundle>
+		<resource-bundle>
+			<base-name>hens_msg</base-name>
+			<var>hens_msg</var>
+		</resource-bundle>
 	</application>
 
 </faces-config>

@@ -39,7 +39,7 @@
 }
 
 /*#navigationmenu ul li:hover {*/
-.liclass:hover {	
+#navigationmenu ul li:hover {	
 	background-color: #909090;
 }
 

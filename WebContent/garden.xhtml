@@ -12,7 +12,7 @@
 <body>
 	<ui:composition template="/templates/template.xhtml">
 		<ui:define name="title">
-			#{index_msg.title}
+			#{garden_msg.title}
 		</ui:define>
 		
 		<ui:define name="body">
@@ -41,12 +41,12 @@
 				</button>
 				
 				<div id="initialPane">
-					<h2 style="text-align: center">This is our garden year</h2>
+					<h2 style="text-align: center">#{garden_msg.start_message}</h2>
 					<p>
-						#{garden_msg.info1}
+						#{garden_msg.info_1}
 					</p>
 					<p>
-						#{garden_msg.info2}
+						#{garden_msg.info_2}
 					</p>
 				</div>
 				
