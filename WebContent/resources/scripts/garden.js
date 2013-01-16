@@ -3,8 +3,6 @@
  */
 
 $(document).ready(function(){
-	//Set initial opacity to 0 for invisible
-	$("#winterPane, #springPane, #summerPane, #autumnPane").css({ opacity: 0.0 });
 	
     $("#winterButton").toggle(function() {
         // alert("click1");
