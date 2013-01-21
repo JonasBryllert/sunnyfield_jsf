@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+      
+<head>
+	<title>IGNORED</title>
+</head>
+
+<body>
+	<ui:composition template="/templates/template.xhtml">
+		<ui:define name="title">
+			#{blog_msg.title}
+		</ui:define>
+
+		<ui:define name="body">
+			<h:outputStylesheet library="css" name="blog.css"/>
+	
+			<div id="messageDiv">
+				<div class="padder">
+				<h:outputText styleClass="headerFont" value="#{blog_msg.welcome1}"/>
+				<br/>
+				<h:outputText styleClass="headerFont" value="#{blog_msg.welcome2}"/>
+				<p><h:outputText value="#{blog_msg.hear_from_you}"/></p>
+				<p><p:commandLink value="Write comment" onclick="commentDialog.show()" /></p>
+				</div>
+			</div>
+		
+			<div id="blogDiv">
+				<h:form id="blogForm">
+					<p:dataTable id="blogTable" var="blog" value="#{blogBean.blogList}" >
+						<f:facet name="header">
+							<h:outputText value="Blog"/>
+						</f:facet>
+						<p:column styleClass="dateColumn">
+							<h:outputText value="#{blog.date}"></h:outputText>
+							<br/>
+							<h:outputText value="#{blog.user}"></h:outputText>
+						</p:column>
+						<p:column styleClass="messageColumn">
+							<h:outputText value="#{blog.message}"></h:outputText>
+						</p:column>
+						<ui:remove>
+						<f:facet name="header">
+							In total there are #{fn:length(blogBean.blogList)} messages.
+						</f:facet>
+						</ui:remove>
+					</p:dataTable>
+				</h:form>
+			</div>
+			
+			<br style="clear: both;"/>
+			
+	
+			<p:dialog widgetVar="commentDialog" header="Write comment" 
+				showEffect="slide-down" hideEffect="explode" position="center,center"
+				>
+				<h:form id="commentForm">									
+		
+						<p:panelGrid>
+							<p:row>
+								<p:column><h:outputLabel for="email" value="E-mail:"/></p:column>
+								<p:column><h:inputText id="email" value="#{blogBean.email}"/></p:column>
+							</p:row>
+							
+							<p:row>
+								<p:column><h:outputLabel for="comment" value="Comment:"/></p:column>
+								<p:column><h:inputText required="true" id="comment" value="#{blogBean.comment}"/></p:column>
+							</p:row>
+														
+							<p:row>
+								<p:column colspan="2" style="text-align:center">
+									<p:commandButton value="Send Comment" action="#{blogBean.processComment}" 
+									onsuccess="alert('Comment sent');commentDialog.hide()" update=":blogForm:blogTable"/>
+								</p:column>
+							</p:row>
+							
+						</p:panelGrid>
+				</h:form>	
+
+			</p:dialog>
+			
+
+		</ui:define>
+		
+	</ui:composition>
+</body>	
+</html>
