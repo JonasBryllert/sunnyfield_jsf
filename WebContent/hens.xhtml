@@ -5,6 +5,7 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
+      
 <head>
 	<title>IGNORED</title>
 </head>
@@ -17,16 +18,18 @@
 
 		<ui:define name="body">
 			<h:outputStylesheet library="css" name="hens.css"/>
-			<h2 style="text-align: center">#{hens_msg.header_message}</h2>
-			<p>#{hens_msg.info_1}</p>
-			<p>#{hens_msg.info_2}</p>
-			<p>#{hens_msg.info_3}</p>
-			<p>#{hens_msg.info_4}</p>
-			<h:panelGrid columns="2" styleClass="imageTable" cellpadding="0">
-				<h:graphicImage name="images/hens/hens1.jpg" alt="Chickens"/>
-				<h:graphicImage name="images/hens/hens2.jpg" alt="Chickens"/>
-			
-			</h:panelGrid>
+			<div id="mainDiv">
+				<div class="header"><h:outputText styleClass="header" value="#{hens_msg.header_message}"/></div>
+				<p class="pararaph">#{hens_msg.info_1}</p>
+				<p class="pararaph">#{hens_msg.info_2}</p>
+				<p class="pararaph">#{hens_msg.info_3}</p>
+				<p class="pararaph">#{hens_msg.info_4}</p>
+				<h:panelGrid columns="2" styleClass="imageTable" cellpadding="0">
+					<h:graphicImage name="images/hens/hens1.jpg" alt="Chickens"/>
+					<h:graphicImage name="images/hens/hens2.jpg" alt="Chickens"/>
+				
+				</h:panelGrid>
+			</div>
 		</ui:define>
 		
 	</ui:composition>

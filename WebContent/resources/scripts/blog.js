@@ -20,7 +20,7 @@ function getBlogs() {
 		// alert("response3: " + response2); 
 		
 		var newHtml = "";
-		for(i=0;i < response.blogs.blog.length; i++) {
+		for(var i = 0; i < response.blogs.blog.length; i++) {
 			newHtml += '<div class="blogheader">From: ' + response.blogs.blog[i].email + '<br />Date: ' + response.blogs.blog[i].time + '</div>';
 			newHtml += '<div class="blogbackground">' + response.blogs.blog[i].message + '</div>';
 			newHtml += '<br />';

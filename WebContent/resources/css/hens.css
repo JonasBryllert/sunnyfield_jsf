@@ -1,8 +1,14 @@
-body {
-	background-color: #A0A0A0;
+#mainDiv {
+	background-color:  #A0A0A0;
 }
 
-p {
+.header {
+	text-align: center;
+	font-size: 1.3em;
+	padding-top: 1em;
+}
+
+.pararaph {
 	margin-left: 10px;
 	margin-right: 10px;
 	text-align: center;

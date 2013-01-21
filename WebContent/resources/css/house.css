@@ -2,7 +2,7 @@
 #totalpane {
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;	
-	height: 800px;
+	height: 420px;
 	background-color: #A0A0A0;
 }
 
@@ -25,6 +25,8 @@
 }
 
 #textPane {
+	float: left;
+	width: 220px;
 	overflow: auto;
 	padding-left: 10px;
 	padding-right: 10px;
