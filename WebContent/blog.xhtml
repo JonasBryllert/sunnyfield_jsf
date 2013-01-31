@@ -21,16 +21,15 @@
 			<h:outputStylesheet library="css" name="blog.css"/>
 	
 			<div id="messageDiv">
-				<div class="padder">
 				<h:outputText styleClass="headerFont" value="#{blog_msg.welcome1}"/>
 				<br/>
 				<h:outputText styleClass="headerFont" value="#{blog_msg.welcome2}"/>
 				<p><h:outputText value="#{blog_msg.hear_from_you}"/></p>
 				<p><p:commandLink value="Write comment" onclick="commentDialog.show()" /></p>
-				</div>
 			</div>
 		
 			<div id="blogDiv">
+				<p:growl id="growl" sticky="true"/>
 				<h:form id="blogForm">
 					<p:dataTable id="blogTable" var="blog" value="#{blogBean.blogList}" >
 						<f:facet name="header">
@@ -56,26 +55,26 @@
 			<br style="clear: both;"/>
 			
 	
-			<p:dialog widgetVar="commentDialog" header="Write comment" 
-				showEffect="slide-down" hideEffect="explode" position="center,center"
-				>
+			<p:dialog widgetVar="commentDialog" header="Write comment" dynamic="true" modal="true"
+				showEffect="slide" hideEffect="explode" position="center,center">
+				
 				<h:form id="commentForm">									
-		
+					
 						<p:panelGrid>
 							<p:row>
 								<p:column><h:outputLabel for="email" value="E-mail:"/></p:column>
-								<p:column><h:inputText id="email" value="#{blogBean.email}"/></p:column>
+								<p:column><h:inputText id="email" value="#{commentBean.email}"/></p:column>
 							</p:row>
 							
 							<p:row>
 								<p:column><h:outputLabel for="comment" value="Comment:"/></p:column>
-								<p:column><h:inputText required="true" id="comment" value="#{blogBean.comment}"/></p:column>
+								<p:column><h:inputText required="true" id="comment" value="#{commentBean.comment}"/></p:column>
 							</p:row>
 														
 							<p:row>
 								<p:column colspan="2" style="text-align:center">
-									<p:commandButton value="Send Comment" action="#{blogBean.processComment}" 
-									onsuccess="alert('Comment sent');commentDialog.hide()" update=":blogForm:blogTable"/>
+									<p:commandButton value="Send Comment" action="#{commentBean.processComment}" 
+									onsuccess="alert('Comment sent');commentDialog.hide()" update=":blogForm:blogTable :growl"/>
 								</p:column>
 							</p:row>
 							

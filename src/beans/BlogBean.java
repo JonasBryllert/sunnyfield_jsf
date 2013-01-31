@@ -6,10 +6,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 
 import model.Blog;
 
@@ -18,13 +16,11 @@ import model.Blog;
 public class BlogBean implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	private String email;
-	private String comment;
 	
 	private List<Blog> blogList = new ArrayList<Blog>();
 	
 	public BlogBean() {
-		System.out.println("CommentBean constructor");
+		System.out.println("BlogBean constructor");
 		Blog blog = new Blog();
 		blog.setDate(DateFormat.getDateTimeInstance().format(new Date()));
 		blog.setMessage("test");
@@ -37,33 +33,11 @@ public class BlogBean implements Serializable {
 		blogList.add(blog2);
 	}
 	
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getComment() {
-		return comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
-
-	public String processComment() {
-		Blog blog = new Blog();
-		blog.setDate(DateFormat.getDateTimeInstance().format(new Date()));
-		blog.setMessage(comment);
-		blog.setUser(email);
+	synchronized public void addBlog(Blog blog) {
 		blogList.add(blog);
-		FacesContext.getCurrentInstance().addMessage("Blog added", new FacesMessage("Comment added"));
-		return null;
 	}
 	
-	public List<Blog> getBlogList() {
+	synchronized public List<Blog> getBlogList() {
 		return blogList;
 	}
 }
